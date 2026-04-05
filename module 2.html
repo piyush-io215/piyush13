@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI/UX Learning Path | Piyush</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #020202;
+            --card: #1e1e1e;
+            --accent: #d13c3c;
+            --text: #e0e0e0;
+            --muted: #a0a0a0;
+        }
+ 
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+ 
+        nav {
+            background: #111;
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+ 
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+ 
+        .btn-back {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+ 
+        .btn-back:hover { color: var(--accent); }
+ 
+        .container {
+            max-width: 1000px;
+            margin: 100px auto 40px;
+            padding: 0 20px;
+        }
+ 
+        .hero-section {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 2rem 0;
+        }
+ 
+        .hero-section h1 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+ 
+        .day-card {
+            background: var(--card);
+            border-radius: 12px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: 0.3s;
+            border: 1px solid #333;
+        }
+ 
+        .day-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 15px var(--accent);
+        }
+ 
+        @media (min-width: 768px) {
+            .day-card { flex-direction: row; }
+        }
+ 
+        .day-image {
+            flex: 1;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            overflow: hidden;
+            padding: 0;
+        }
+ 
+        .day-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 200px;
+            object-fit: contain;
+            border-radius: 0;
+            filter: grayscale(20%) brightness(0.85);
+            transition: filter 0.3s;
+        }
+ 
+        .day-card:hover .day-image img {
+            filter: grayscale(0%) brightness(1);
+        }
+ 
+        .day-content {
+            flex: 1.5;
+            padding: 30px;
+        }
+ 
+        .day-label {
+            color: var(--accent);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+ 
+        h2 {
+            margin-bottom: 15px;
+            color: #fff;
+        }
+ 
+        p { color: var(--muted); margin-bottom: 15px; }
+ 
+        ul {
+            padding-left: 20px;
+            list-style-type: none;
+        }
+ 
+        ul li {
+            margin-bottom: 8px;
+            position: relative;
+            color: var(--text);
+        }
+ 
+        ul li::before {
+            content: "→";
+            color: var(--accent);
+            position: absolute;
+            left: -20px;
+        }
+ 
+        code {
+            background: #2a2a2a;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+ 
+        .note-box {
+            background: #2a2a2a;
+            border-left: 3px solid var(--accent);
+            padding: 10px 15px;
+            border-radius: 0 6px 6px 0;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: var(--muted);
+            font-style: italic;
+        }
+ 
+        footer {
+            background: #0a0a0a;
+            text-align: center;
+            padding: 40px;
+            color: var(--muted);
+            font-size: 0.9rem;
+            border-top: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+ 
+    <nav>
+        <a href="index.html" class="logo">
+            <h3 style="color:#d13c3c">Piyush Warudkar</h3>
+        </a>
+        <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Portfolio</a>
+    </nav>
+ 
+    <div class="container">
+        <div class="hero-section">
+            <h1>UI/UX Design Module</h1>
+            <p style="color: var(--muted)">A Hands-On Journey into Figma & Interface Design Principles</p>
+        </div>
+ 
+        <!-- DAY 01 -->
+        <div class="day-card">
+            <div class="day-image">
+                <img src="ui and ux day1.png"Figma Interface Design">
+            </div>
+            <div class="day-content">
+                <div class="day-label">Day 01</div>
+                <h2>Figma Basics & Interface Overview</h2>
+                <p>Getting familiar with Figma's workspace and understanding the core concepts of vector-based design.</p>
+                <ul>
+                    <li>Generating <code>vectors</code> in Figma</li>
+                    <li><code>Frame</code> constraints — constraints only work inside frames</li>
+                    <li>Why Figma uses <code>raster</code> rendering under the hood</li>
+                    <li>Figma Interface: Design Panel, Move Tool, Shape Tool</li>
+                    <li>Responsiveness & Adaptation — understanding the difference</li>
+                </ul>
+            </div>
+        </div>
+ 
+        <!-- DAY 02 -->
+        <div class="day-card">
+            <div class="day-image">
+                <img src="ui and ux day 2.png" alt="Components and Auto Layout">
+            </div>
+            <div class="day-content">
+                <div class="day-label">Day 02</div>
+                <h2>Components, Auto Layout & Project Kickoff</h2>
+                <p>Learning reusable design systems through components and kicking off a real-world project.</p>
+                <ul>
+                    <li>Creating a <code>Component</code> using the component button</li>
+                    <li><code>Component vs Instance</code> — hold <code>Alt</code> + drag a frame to create an instance (child of the parent component)</li>
+                    <li>Select frame → <code>Shift + A</code> to apply <strong>Auto Layout</strong></li>
+                    <li><strong>Flow & Resizing</strong> — text overflow auto-fixes with Auto Layout enabled</li>
+                    <li>Started Project: <code>Red Bull Sugar Free</code> landing page</li>
+                    <li>Set up layout columns, created <code></code> circle with margins</li>
+                    <li>Built and aligned the three hero circles</li>
+                </ul>
+                <div class="note-box">
+                    💡 Component = Parent &nbsp;|&nbsp; Instance = Child &nbsp;—&nbsp; Instances inherit but can be overridden individually.
+                </div>
+            </div>
+        </div>
+ 
+        <!-- DAY 03 -->
+        <div class="day-card">
+            <div class="day-image">
+                <img src="ui and ux day 3.png" alt="Typography and Styling">
+            </div>
+            <div class="day-content">
+                <div class="day-label">Day 03</div>
+                <h2>Typography, Padding & Styling</h2>
+                <p>Fixing font issues, mastering spacing properties, and refining the Red Bull project's visual style.</p>
+                <ul>
+                    <li><code>Shift + Alt</code> — view element dimensions on hover</li>
+                    <li>Font not editable issue — font was <code>Satoshi</code>, not available in Figma by default</li>
+                    <li>Downloaded <strong>Satoshi Variable</strong> from browser and installed it in Figma</li>
+                    <li>Set <code>Horizontal Padding</code> and <code>Vertical Padding</code></li>
+                    <li>Applied <code>Corner Radius</code> for pill-shaped badge</li>
+                    <li>Set text color to <code>#000000</code> (black) for readability</li>
+                </ul>
+                <div class="note-box">
+                    🎨 Project: Red Bull Sugar Free — "Energy Drinks" badge styled with auto layout padding + corner radius.
+                </div>
+            </div>
+        </div>
+ 
+        <!-- DAY 04 -->
+        <div class="day-card">
+            <div class="day-image">
+                <img src="ui and ux day4.png" alt="Project Completion">
+            </div>
+            <div class="day-content">
+                <div class="day-label">Day 04</div>
+                <h2>Red Bull Project — Final Completion</h2>
+                <p>Completed the full Red Bull Sugar Free UI design by following along with a YouTube reference.</p>
+                <ul>
+                    <li>Followed a YouTube tutorial to complete the remaining sections</li>
+                    <li>Applied all previous concepts — Auto Layout, Components, Constraints</li>
+                    <li>Finalized layout with consistent spacing and visual hierarchy</li>
+                    <li>Red Bull Sugar Free landing page UI — <strong>completed ✅</strong></li>
+                </ul>
+                <div class="note-box">
+                    📺 Reference: YouTube walkthrough used to complete the full Red Bull Sugar Free Figma design project.
+                </div>
+            </div>
+        </div>
+ 
+        <!-- DAY 05 -->
+        <div class="day-card">
+            <div class="day-image">
+                <img src="ui and ux day5.png" alt="Glass Effect and UX Psychology">
+            </div>
+            <div class="day-content">
+                <div class="day-label">Day 05</div>
+                <h2>Glass Effect, UI vs UX & Case Study</h2>
+                <p>Explored the glassmorphism effect and dived into the psychology behind UX design decisions.</p>
+                <ul>
+                    <li>Learned the <strong>Glass Effect</strong> (Glassmorphism) in Figma</li>
+                    <li>Assignment: apply Glass Effect in project — usable in task bars & buttons</li>
+                    <li>Deliverable: Design <strong>two versions</strong> — Main UI + Glass Effect UI</li>
+                    <li><code>UI</code> deals with <strong>Design</strong> &nbsp;|&nbsp; <code>UX</code> deals with <strong>Psychology</strong></li>
+                    <li>Case Study — Why does a phone dial start <code>1→9</code> but a calculator starts <code>9→1</code>?</li>
+                    <li>Discussed <strong>Project Evaluation</strong> criteria</li>
+                </ul>
+                <div class="note-box">
+                    🧠 UX Insight: Phone keypads start from 1 (top) because of early telephone research on user habits. Calculators inherited the adding-machine layout where larger numbers were used more frequently and placed at the top for speed.
+                </div>
+            </div>
+        </div>
+ 
+    </div>
+ 
+    <footer>
+        <p>Piyush Warudkar | UI/UX Design</p>
+    </footer>
+ 
+</body>
+</html>

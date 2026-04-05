@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Learning Path | Piyush</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #020202;
+            --card: #1e1e1e;
+            --accent: #d13c3c;
+            --text: #e0e0e0;
+            --muted: #a0a0a0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* NAV MATCHING MAIN PORTFOLIO */
+        nav {
+            background: #111;
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .btn-back {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-back:hover { color: var(--accent); }
+
+        .container {
+            max-width: 1000px;
+            margin: 100px auto 40px;
+            padding: 0 20px;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 2rem 0;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        /* CARD STYLING MATCHING PORTFOLIO */
+        .day-card {
+            background: var(--card);
+            border-radius: 12px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: 0.3s;
+            border: 1px solid #333;
+        }
+
+        .day-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 15px var(--accent);
+        }
+
+        @media (min-width: 768px) {
+            .day-card { flex-direction: row; }
+        }
+
+        .day-image {
+            flex: 1;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            padding: 20px;
+        }
+
+        .day-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            filter: grayscale(20%);
+        }
+
+        .day-content {
+            flex: 1.5;
+            padding: 30px;
+        }
+
+        .day-label {
+            color: var(--accent);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        p { color: var(--muted); margin-bottom: 15px; }
+
+        ul {
+            padding-left: 20px;
+            list-style-type: none;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+            position: relative;
+            color: var(--text);
+        }
+
+        ul li::before {
+            content: "→";
+            color: var(--accent);
+            position: absolute;
+            left: -20px;
+        }
+
+        code {
+            background: #2a2a2a;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: #0a0a0a;
+            text-align: center;
+            padding: 40px;
+            color: var(--muted);
+            font-size: 0.9rem;
+            border-top: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">
+            <h3 style="color:#d13c3c">Piyush Warudkar</h3>
+        </a>
+        <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Portfolio</a>
+    </nav>
+
+    <div class="container">
+        <div class="hero-section">
+            <h1>Web Technology Module</h1>
+            <p style="color: var(--muted)">A 7-Day Comprehensive Journey into Modern Web Development</p>
+        </div>
+
+        <div class="day-card">
+            <div class="day-image">
+                <img src="basic.png" alt="Day 1">
+            </div>
+            <div class="day-content">
+                <div class="day-label">Day 01</div>
+                <h2>Basic Text Elements</h2>
+                <p>Mastering the fundamental building blocks of HTML structure and text formatting.</p>
+                <ul>
+                    <li><code>&lt;p&gt;</code> Paragraph structures</li>
+                    <li><code>&lt;b&gt;</code> & <code>&lt;i&gt;</code> Text emphasis</li>
+                    <li><code>&lt;h1-h6&gt;</code> Semantic headings</li>
+                    <li><code>&lt;marquee&gt;</code> Legacy animations</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-image">
+                <img src="table.png" alt="Day 2">
+            </div>
+            <div class="day-content">
+                <div class="day-label">Day 02</div>
+                <h2>Media & Data Tables</h2>
+                <p>Integrating visual assets and organizing complex information into tables.</p>
+                <ul>
+                    <li><code>&lt;img&gt;</code> Responsive image handling</li>
+                    <li><code>&lt;a&gt;</code> Navigation and Hyperlinks</li>
+                    <li><code>&lt;video&gt;</code> & <code>&lt;audio&gt;</code> Multimedia</li>
+                    <li><code>&lt;table&gt;</code> Data structure and borders</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-image">
+                <img src="form.png" alt="Day 3">
+            </div>
+            <div class="day-content">
+                <div class="day-label">Day 03</div>
+                <h2>User Input & Forms</h2>
+                <p>Designing interactive interfaces to capture and validate user information.</p>
+                <ul>
+                    <li><code>&lt;form&gt;</code> Action and Method attributes</li>
+                    <li>Input types (text, email, password, checkbox)</li>
+                    <li><code>&lt;textarea&gt;</code> for feedback loops</li>
+                    <li>Submit buttons and accessible labels</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-image">
+                <img src="navigation.png" alt="Day 4">
+            </div>
+            <div class="day-content">
+                <div class="day-label">Day 04</div>
+                <h2>Semantic HTML</h2>
+                <p>Optimizing page structure for SEO and screen readers using modern standards.</p>
+                <ul>
+                    <li><code>&lt;header&gt;</code> & <code>&lt;nav&gt;</code> Site navigation</li>
+                    <li><code>&lt;main&gt;</code> & <code>&lt;section&gt;</code> Content flow</li>
+                    <li><code>&lt;footer&gt;</code> Meta information</li>
+                    <li>Accessibility (ARIA) basics</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-image">
+                <img src="box model.png" alt="Day 5">
+            </div>
+            <div class="day-content">
+                <div class="day-label">Day 05</div>
+                <h2>CSS Box Model & Flexbox</h2>
+                <p>Controling the layout and spacing of every element on the screen.</p>
+                <ul>
+                    <li><strong>Box Model:</strong> Padding vs Margin vs Border</li>
+                    <li><strong>Flexbox:</strong> Direction, Wrap, and Alignment</li>
+                    <li>CSS Variables for consistent branding</li>
+                    <li>Responsive container design</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-image">
+                <img src="javas.png" alt="Day 6">
+            </div>
+            <div class="day-content">
+                <div class="day-label">Day 06</div>
+                <h2>JavaScript Fundamentals</h2>
+                <p>Injecting logic and interactivity into static pages using scripting.</p>
+                <ul>
+                    <li>Arithmetic and Logical operators</li>
+                    <li>Variable scopes (let, const, var)</li>
+                    <li>Functions and Arrow functions</li>
+                    <li>Conditional logic (if/else, switch)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-image">
+                <img src="to-do-list.png" alt="Day 7">
+            </div>
+            <div class="day-content">
+                <div class="day-label">Day 07</div>
+                <h2>Final Project: To-Do List</h2>
+                <p>The capstone project combining all previous skills into a working application.</p>
+                <ul>
+                    <li>DOM Selection and Manipulation</li>
+                    <li>Event Listeners (Click, Keydown)</li>
+                    <li>Dynamic Element creation</li>
+                    <li>State management (Add/Delete tasks)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p> Piyush Warudkar | Web Development </p>
+    </footer>
+
+</body>
+</html>

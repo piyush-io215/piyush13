@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Piyush Warudkar – Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    :root {
+      --ink: #1a1a1a;
+      --muted: #555;
+      --accent: #b5452a;
+      --rule: #d4c9be;
+      --bg: #faf7f3;
+      --card: #fff;
+    }
+ 
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 40px 16px;
+    }
+ 
+    .page {
+      background: var(--card);
+      width: 100%;
+      max-width: 780px;
+      padding: 52px 60px;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+      animation: fadeUp 0.6s ease both;
+    }
+ 
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+ 
+    /* ── HEADER ── */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      margin-bottom: 36px;
+      padding-bottom: 28px;
+      border-bottom: 2px solid var(--ink);
+    }
+ 
+    .header-left { flex: 1; }
+ 
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      line-height: 1;
+      margin-bottom: 14px;
+      color: var(--ink);
+    }
+ 
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+ 
+    .contact-list li {
+      font-size: 0.82rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+ 
+    .contact-list li span.label {
+      font-weight: 500;
+      color: var(--ink);
+      min-width: 56px;
+    }
+ 
+    .contact-list a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .contact-list a:hover { border-color: var(--accent); }
+ 
+    .photo {
+      width: 110px;
+      height: 130px;
+      object-fit: cover;
+      border: 3px solid var(--ink);
+      flex-shrink: 0;
+      display: block;
+      background: #e0d8ce;
+      position: relative;
+      overflow: hidden;
+    }
+ 
+    .photo-placeholder {
+      width: 110px;
+      height: 130px;
+      border: 3px solid var(--ink);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: var(--muted);
+      background: #f0ebe4;
+      font-family: 'DM Sans', sans-serif;
+    }
+ 
+    /* ── SECTIONS ── */
+    .section {
+      margin-bottom: 30px;
+      animation: fadeUp 0.6s ease both;
+    }
+    .section:nth-child(2) { animation-delay: 0.08s; }
+    .section:nth-child(3) { animation-delay: 0.14s; }
+    .section:nth-child(4) { animation-delay: 0.20s; }
+    .section:nth-child(5) { animation-delay: 0.26s; }
+ 
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+ 
+    .summary-text {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: #3a3a3a;
+    }
+ 
+    /* ── EDUCATION ── */
+    .edu-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4px 20px;
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px dashed var(--rule);
+    }
+    .edu-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+ 
+    .edu-name {
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    .edu-inst {
+      font-size: 0.82rem;
+      color: var(--muted);
+      grid-column: 1;
+    }
+    .edu-score {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-align: right;
+      white-space: nowrap;
+    }
+    .edu-year {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: right;
+      white-space: nowrap;
+    }
+ 
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+ 
+    .skill-group-title {
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+      color: var(--ink);
+    }
+ 
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+ 
+    .tag {
+      display: inline-block;
+      padding: 4px 11px;
+      font-size: 0.78rem;
+      border: 1.5px solid var(--ink);
+      background: transparent;
+      transition: background 0.18s, color 0.18s;
+      cursor: default;
+    }
+    .tag:hover { background: var(--ink); color: #fff; }
+ 
+    .tag.soft { border-color: var(--accent); color: var(--accent); }
+    .tag.soft:hover { background: var(--accent); color: #fff; }
+ 
+    /* ── HOBBIES ── */
+    .hobbies-list {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+ 
+    .hobby {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.87rem;
+      color: #3a3a3a;
+    }
+ 
+    .hobby::before {
+      content: '◆';
+      font-size: 0.5rem;
+      color: var(--accent);
+    }
+ 
+    @media (max-width: 580px) {
+      .page { padding: 32px 24px; }
+      h1 { font-size: 2rem; }
+      .header { flex-direction: column-reverse; }
+      .photo-placeholder { width: 80px; height: 96px; }
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+ 
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-left">
+        <h1>Piyush<br>Warudkar</h1>
+        <ul class="contact-list">
+          <li>
+            <span class="label">Phone</span>
+            9529789593
+          </li>
+          <li>
+            <span class="label">Email</span>
+            <a href="mailto:piyushwarudkar215@gmail.com">piyushwarudkar215@gmail.com</a>
+          </li>
+          <li>
+            <span class="label">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/piyush-warudkar-a1b26936a" target="_blank">piyush-warudkar-a1b26936a</a>
+          </li>
+        </ul>
+      </div>
+   
+    </header>
+ 
+    <!-- SUMMARY -->
+    <section class="section">
+      <h2 class="section-title">Summary</h2>
+      <p class="summary-text">
+        Aspiring Mechanical Engineer with knowledge of core engineering fundamentals (like Basic Electrical Engineering and Engineering Graphics) and programming skills in HTML, C and C++. Interested in design engineering and developing practical technical solutions.
+      </p>
+    </section>
+ 
+    <!-- EDUCATION -->
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+ 
+      <div class="edu-item">
+        <div class="edu-name">B.E Mechanical Engineering</div>
+        <div></div>
+        <div class="edu-inst">Shri Sant Gajanan Maharaj College of Engineering, Shegaon</div>
+        <div class="edu-year">2025 – 2029</div>
+      </div>
+ 
+      <div class="edu-item">
+        <div class="edu-name">XII — HSC</div>
+        <div class="edu-score">66.50%</div>
+        <div class="edu-inst">SMBS, Khamgaon</div>
+        <div class="edu-year">2024–25</div>
+      </div>
+ 
+      <div class="edu-item">
+        <div class="edu-name">X — SSC</div>
+        <div class="edu-score">88.40%</div>
+        <div class="edu-inst">Lions Dnyanpeeth, Khamgaon</div>
+        <div class="edu-year">2022–23</div>
+      </div>
+    </section>
+ 
+    <!-- SKILLS -->
+    <section class="section">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div>
+          <div class="skill-group-title">Soft Skills</div>
+          <div class="skill-tags">
+            <span class="tag soft">Active Learner</span>
+            <span class="tag soft">Time Management</span>
+            <span class="tag soft">Adaptability</span>
+          </div>
+        </div>
+        <div>
+          <div class="skill-group-title">Software &amp; Languages</div>
+          <div class="skill-tags">
+            <span class="tag">C</span>
+            <span class="tag">C++</span>
+            <span class="tag">HTML</span>
+            <span class="tag">Python <em style="font-size:0.7rem;opacity:0.7">(learning)</em></span>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- HOBBIES -->
+    <section class="section">
+      <h2 class="section-title">Hobbies</h2>
+      <div class="hobbies-list">
+        <div class="hobby">Exploring New Things</div>
+        <div class="hobby">Sketching</div>
+        <div class="hobby">Reading</div>
+      </div>
+    </section>
+ 
+  </div>
+</body>
+</html>
